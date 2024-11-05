@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="393.0" prefWidth="694.0" style="-fx-background-color: #ff8c00;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assegnamento2.assegnamento2.controller.ClientController">
+
+    <children>
+
+        <Label layoutX="14.0" layoutY="9.0" prefHeight="62.0" prefWidth="162.0" text="Dashboard" textFill="WHITE">
+            <font>
+                <Font name="Couture-Bold" size="32.0" />
+            </font>
+        </Label>
+
+        <Label fx:id="usernameLabel" layoutX="176.0" layoutY="16.0" prefHeight="47.0" prefWidth="100.0" text="Client">
+            <font>
+                <Font size="32.0" />
+            </font>
+        </Label>
+
+        <TabPane fx:id="clientTabPane" layoutY="81.0" prefHeight="350.0" prefWidth="693.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
+
+            <tabs>
+
+                <Tab fx:id="shopTab" closable="false" text="Shop">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="680.0">
+                            <children>
+
+                                <TableView fx:id="tableElettronicc" layoutX="14.0" layoutY="10.0" prefHeight="202.0" prefWidth="482.0">
+                                    <placeholder>
+                                        <Label text="Product not found!" />
+                                    </placeholder>
+
+                                    <columns>
+                                        <TableColumn fx:id="elettronicNamec" prefWidth="100.0" text="Name">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="name" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="elettronicProducerc" prefWidth="100.0" text="Producer">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="producer" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="elettronicIDc" prefWidth="100.0" text="ID">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="id" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="elettronicAmountc" text="Amount">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="amount" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                        <TableColumn fx:id="elettronicPricec" prefWidth="101.60001220703123" text="Price">
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="price" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                </TableView>
+
+                                <Button fx:id="buyButton" layoutX="540.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleBuy" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #ff8c00;" text="Buy" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Button>
+
+                                <Button fx:id="searchButton" layoutX="14.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleSearch" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #ffd700;" text="Search" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Button>
+
+                                <Button fx:id="viewButton" layoutX="127.0" layoutY="271.0" mnemonicParsing="false" onAction="#handleView" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #ffd700;" text="View all" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Button>
+
+                                <TextField fx:id="productNamec" layoutX="14.0" layoutY="233.0" prefHeight="26.0" prefWidth="138.0" promptText="Name" />
+                                <TextField fx:id="productProducerc" layoutX="159.0" layoutY="233.0" prefHeight="26.0" prefWidth="138.0" promptText="Producer" />
+                                <TextField fx:id="minimumPrice" layoutX="307.0" layoutY="233.0" prefHeight="26.0" prefWidth="138.0" promptText="Minimum Price" />
+                                <TextField fx:id="maximumPrice" layoutX="452.0" layoutY="233.0" prefHeight="26.0" prefWidth="138.0" promptText="Maximum price" />
+                        <TextField fx:id="prodID" layoutX="521.0" layoutY="42.0" prefHeight="26.0" prefWidth="138.0" promptText="ID product" />
+                        <TextField fx:id="fieldAmount" layoutX="522.0" layoutY="98.0" prefHeight="26.0" prefWidth="138.0" promptText="Amount " />
+
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            <Tab fx:id="orderTab" closable="false" onSelectionChanged="#viewOrder" text="Order">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="680.0">
+                     <children>
+                        <TableView fx:id="tableElettronic1" layoutX="13.0" layoutY="9.0" prefHeight="303.0" prefWidth="667.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="9.0">
+                           <placeholder>
+                              <Label text="Empty shop!" />
+                           </placeholder>
+                           <columns>
+                              <TableColumn fx:id="elettronicName1" prefWidth="143.19997882843018" text="Name">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="name" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="elettronicProducer1" prefWidth="130.40003967285156" text="Producer">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="producer" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="elettronicID1" prefWidth="94.39996337890625" text="ID">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="id" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="elettronicAmount1" prefWidth="139.20001220703125" text="Amount">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="amount" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn fx:id="elettronicPrice1" prefWidth="159.20001220703125" text="Price">
+                                 <cellValueFactory>
+                                    <PropertyValueFactory property="price" />
+                                 </cellValueFactory>
+                              </TableColumn>
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            </tabs>
+        </TabPane>
+
+        <Hyperlink layoutX="619.0" layoutY="14.0" onAction="#handleHomeButton" text="Logout" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Hyperlink>
+
+    </children>
+</AnchorPane>

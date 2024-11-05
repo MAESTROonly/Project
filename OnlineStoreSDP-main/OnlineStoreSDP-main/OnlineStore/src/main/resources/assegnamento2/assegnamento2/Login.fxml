@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assegnamento2.assegnamento2.controller.LoginController">
+   <children>
+      <AnchorPane fx:id="ap" maxHeight="467.0" maxWidth="743.0" minHeight="452.0" minWidth="684.0" prefHeight="452.0" prefWidth="684.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="477.0" fitWidth="685.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Pics/copertina.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="458.0" prefWidth="394.0">
+               <children>
+                  <ImageView fitHeight="466.0" fitWidth="393.0" layoutY="-1.0" opacity="0.41" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Pics/nero.jpg" />
+                     </image>
+                  </ImageView>
+                  <TextField fx:id="userName" layoutX="97.0" layoutY="130.0" prefHeight="25.0" prefWidth="176.0" promptText="Username">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="pass" layoutX="97.0" layoutY="199.0" onAction="#onEnter" prefHeight="26.0" prefWidth="176.0" promptText="Password">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </PasswordField>
+                  <Button layoutX="86.0" layoutY="285.0" mnemonicParsing="false" onAction="#handleLoginButton" prefHeight="39.0" prefWidth="198.0" style="-fx-background-color: #ff8c00; -fx-border-color: #1b3f77;" text="Log In" textFill="WHITE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="loginLabel" layoutX="39.0" layoutY="27.0" prefHeight="72.0" prefWidth="318.0" text="Electronic Store " textAlignment="CENTER" textFill="DARKORANGE">
+                     <font>
+                        <Font name="Vivaldi Italic" size="44.0" />
+                     </font>
+                     <effect>
+                        <Glow level="1.0" />
+                     </effect>
+                  </Label>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+            <Button fx:id="register" layoutX="473.0" layoutY="210.0" mnemonicParsing="false" onAction="#onRegister" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #ff8c00;" text="Register Now" textFill="WHITE">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="registerLabel" layoutX="445.0" layoutY="155.0" text="Not a member yet ?" textFill="#fcfafa">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Hyperlink layoutX="14.0" layoutY="420.0" onAction="#handleContactUsLink" text="Contact Us" textFill="WHITE" />
+            <Label layoutX="549.0" layoutY="423.0" mnemonicParsing="true" text="RaikhanovProduction ©" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

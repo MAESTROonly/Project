@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="393.0" prefWidth="694.0" style="-fx-background-color: #ff8c00;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assegnamento2.assegnamento2.controller.AdminController">
+	<children>
+		<Label layoutX="14.0" layoutY="9.0" prefHeight="62.0" prefWidth="162.0" text="Dashboard" textFill="WHITE">
+			<font>
+				<Font name="Couture-Bold" size="32.0" />
+			</font>
+		</Label>
+		<Label fx:id="usernameLabel" layoutX="181.0" layoutY="16.0" prefHeight="47.0" prefWidth="398.0" text="Admin">
+			<font>
+				<Font size="32.0" />
+			</font>
+		</Label>
+		<TabPane fx:id="adminTabPane" layoutY="81.0" prefHeight="350.0" prefWidth="693.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+            <Tab fx:id="deliveryTabA" text="Confirm order">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+					  <children>
+						  <TableView fx:id="deliveryTableView" layoutX="170.0" layoutY="10.0" prefHeight="247.0" prefWidth="510.0">
+							  <placeholder>
+								  <Label text="NO ORDER" />
+							  </placeholder>
+							  <columns>
+				<TableColumn fx:id="ordElettronicE" prefWidth="127.20002746582031" text="Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="name" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn fx:id="ordEProducerE" minWidth="0.0" prefWidth="115.2000732421875" text="Producer">
+					<cellValueFactory>
+						<PropertyValueFactory property="producer" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn fx:id="ordEidE" prefWidth="42.4000244140625" text="ID">
+					<cellValueFactory>
+						<PropertyValueFactory property="id" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn fx:id="ordEAmountE" prefWidth="79.20001220703125" text="Amount">
+					<cellValueFactory>
+						<PropertyValueFactory property="amount" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn fx:id="ordEPriceE" prefWidth="142.39999999999998" text="Price">
+					<cellValueFactory>
+						<PropertyValueFactory property="price" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+
+		<Button fx:id="deliverySendAllE" layoutX="541.0" layoutY="269.0" mnemonicParsing="false" onAction="#handleSendAll" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #ffd700;" text="Send All" textFill="WHITE">
+			<font>
+				<Font name="System Bold" size="12.0" />
+			</font>
+		</Button>
+		<ComboBox fx:id="choiceClient" layoutX="14.0" layoutY="10.0" onAction="#handleChoiceClient" prefWidth="150.0" promptText="choice client" visibleRowCount="9" />
+
+	</children>
+
+</AnchorPane>
+               </content>
+            </Tab>
+				<Tab fx:id="buyFinishedTabE" closable="false" onSelectionChanged="#handleViewBuyElDev" text="Buy finished product">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="680.0">
+							<children>
+
+								<TableView fx:id="buyFinishedTableView" layoutX="14.0" layoutY="10.0" prefHeight="263.0" prefWidth="670.0">
+
+									<columns>
+										<TableColumn fx:id="bName" prefWidth="100.0" text="Name">
+											<cellValueFactory>
+												<PropertyValueFactory property="name" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="bProducer" prefWidth="100.0" text="Producer">
+											<cellValueFactory>
+												<PropertyValueFactory property="producer" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="bID" prefWidth="100.0" text="ID">
+											<cellValueFactory>
+												<PropertyValueFactory property="id" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="bAmount" text="Amount">
+											<cellValueFactory>
+												<PropertyValueFactory property="amount" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="bPrice" prefWidth="100.0" text="Price">
+											<cellValueFactory>
+												<PropertyValueFactory property="price" />
+											</cellValueFactory>
+										</TableColumn>
+									</columns>
+
+								</TableView>
+
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+            <Tab text="Product options">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="358.0" prefWidth="694.0">
+                     <children>
+                        <TabPane prefHeight="400.0" prefWidth="698.0" tabClosingPolicy="UNAVAILABLE">
+                           <tabs>
+                              <Tab fx:id="productUTabA1" closable="false" onSelectionChanged="#handleRefreshUpdateTable"  text="Update Product">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="269.0" prefWidth="698.0">
+                                       <children>
+                                          <TableView fx:id="updateTableView" layoutX="14.0" layoutY="10.0" prefHeight="260.0" prefWidth="526.0">
+                                             <placeholder>
+                                                <Label text="No product" />
+                                             </placeholder>
+                                             <columns>
+                                                <TableColumn fx:id="eNameA1" prefWidth="123.19991779327393" text="Name">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="name" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="eProducerA1" prefWidth="125.60011291503906" text="Producer">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="producer" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="eIDA1" prefWidth="39.20001220703125" text="ID">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="id" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="eAmountA1" prefWidth="89.60009765625" text="Amount">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="amount" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="ePriceA1" prefWidth="147.99993896484375" text="Price">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="price" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="updateProductButton1" layoutX="572.0" layoutY="126.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #ffd700;" text="Update" textFill="WHITE" AnchorPane.bottomAnchor="217.2" AnchorPane.leftAnchor="572.0" AnchorPane.rightAnchor="27.199999999999974" AnchorPane.topAnchor="126.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="newProductIdU" layoutX="560.0" layoutY="62.0" prefHeight="26.0" prefWidth="138.0" promptText="ID" AnchorPane.bottomAnchor="285.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0" />
+                                          <TextField fx:id="newProductAmountU" layoutX="560.0" layoutY="95.0" prefHeight="26.0" prefWidth="138.0" promptText="Amount" AnchorPane.bottomAnchor="255.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="90.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="productUTabA11" closable="false" onSelectionChanged="#handleRefreshAddTable"  text="Add Product">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="680.0">
+                                       <children>
+                                          <TableView fx:id="addTableView" layoutX="14.0" layoutY="10.0" prefHeight="260.0" prefWidth="526.0">
+                                             <placeholder>
+                                                <Label text="No product"/>
+                                             </placeholder>
+                                             <columns>
+                                                <TableColumn fx:id="eNameA11" prefWidth="123.19991779327393" text="Name">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="name" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="eProducerA11" prefWidth="125.60011291503906" text="Producer">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="producer" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="eIDA11" prefWidth="39.20001220703125" text="ID">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="id" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="eAmountA11" prefWidth="89.60009765625" text="Amount">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="amount" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="ePriceA11" prefWidth="147.99993896484375" text="Price">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="price" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                             </columns>
+                                          </TableView>
+                                          <Button fx:id="addProductButton1" layoutX="571.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleAddProd" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #ffd700;" text="Add " textFill="WHITE" AnchorPane.bottomAnchor="136.2" AnchorPane.leftAnchor="571.0" AnchorPane.rightAnchor="28.199999999999974">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="newProductName" layoutX="544.0" layoutY="73.0" prefHeight="26.0" prefWidth="138.0" promptText="Name" AnchorPane.bottomAnchor="295.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="50.0" />
+                                          <TextField fx:id="newProductProducer" layoutX="543.0" layoutY="106.0" prefHeight="26.0" prefWidth="138.0" promptText="Producer" AnchorPane.bottomAnchor="265.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="80.0" />
+                                          <TextField fx:id="newProductID" layoutX="543.0" layoutY="140.0" prefHeight="26.0" prefWidth="138.0" promptText="ID" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="110.0" />
+                                          <TextField fx:id="newProductAmount" layoutX="544.0" layoutY="172.0" prefHeight="26.0" prefWidth="138.0" promptText="Amount" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="140.0" />
+                                          <TextField fx:id="newProductPrice" layoutX="544.0" layoutY="206.0" prefHeight="26.0" prefWidth="138.0" promptText="Price" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="170.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="productUTabA3" closable="false" onSelectionChanged="#handleRefreshRmvTable"  text="Remove Product">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="369.0" prefWidth="698.0">
+                                       <children>
+                                          <TableView fx:id="rmvTableView" layoutX="14.0" layoutY="10.0" prefHeight="260.0" prefWidth="526.0">
+                                             <placeholder>
+                                                <Label text="No product" />
+                                             </placeholder>
+                                             <columns>
+                                                <TableColumn fx:id="eNameA3" prefWidth="123.19991779327393" text="Name">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="name" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="eProducerA3" prefWidth="125.60011291503906" text="Producer">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="producer" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="eIDA3" prefWidth="39.20001220703125" text="ID">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="id" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="eAmountA3" prefWidth="89.60009765625" text="Amount">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="amount" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                                <TableColumn fx:id="ePriceA3" prefWidth="147.99993896484375" text="Price">
+                                                   <cellValueFactory>
+                                                      <PropertyValueFactory property="price" />
+                                                   </cellValueFactory>
+                                                </TableColumn>
+                                             </columns>
+                                          </TableView>
+                                          <TextField fx:id="newProductIdR" layoutX="560.0" layoutY="89.0" prefHeight="26.0" prefWidth="138.0" promptText="ID" AnchorPane.bottomAnchor="255.79999999999995" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="89.0" />
+                                          <Button fx:id="deleteProductButton11" layoutX="572.0" layoutY="126.0" mnemonicParsing="false" onAction="#handleRmvProd" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #ffd700;" text="Remove" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+
+				<Tab fx:id="employeeTab" closable="false" text="Employees">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="270.0" prefWidth="438.0" style="-fx-background-color: white;">
+							<children>
+
+								<TableView fx:id="employeeTableView" cache="true" layoutX="14.0" layoutY="10.0" prefHeight="304.0" prefWidth="442.0">
+									<placeholder>
+										<Label text="View Employee" />
+									</placeholder>
+									<columns>
+										<TableColumn fx:id="empName" maxWidth="500.0" prefWidth="100.0" text="Name">
+											<cellValueFactory>
+												<PropertyValueFactory property="name" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="empSurname" prefWidth="100.0" text="Surname">
+											<cellValueFactory>
+												<PropertyValueFactory property="surname" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="empUsername" prefWidth="120.0" text="Username">
+											<cellValueFactory>
+												<PropertyValueFactory property="username" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="empPass" prefWidth="120.0" text="Password">
+											<cellValueFactory>
+												<PropertyValueFactory property="password" />
+											</cellValueFactory>
+										</TableColumn>
+									</columns>
+								</TableView>
+
+								<Button fx:id="addNewEmpButton" layoutX="462.0" layoutY="193.0" mnemonicParsing="false" onAction="#handleAddEmployee" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #ff8c00;" text="Add " textFill="WHITE">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Button>
+
+								<Button fx:id="rmvEmplButton" layoutX="575.0" layoutY="193.0" mnemonicParsing="false" onAction="#handleRmvEmp" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #ffd700;" text="Remove" textFill="WHITE">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Button>
+
+								<TextField fx:id="newEmpName" layoutX="461.0" layoutY="27.0" prefHeight="25.0" prefWidth="215.0" promptText="Name" />
+								<TextField fx:id="newEmpSurname" layoutX="461.0" layoutY="69.0" prefHeight="25.0" prefWidth="215.0" promptText="Surname" />
+								<TextField fx:id="newEmpUsername" layoutX="461.0" layoutY="111.0" prefHeight="25.0" prefWidth="215.0" promptText="Username" />
+								<TextField fx:id="newEmpPass" layoutX="461.0" layoutY="152.0" prefHeight="25.0" prefWidth="214.0" promptText="Password" />
+
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+
+		<Hyperlink layoutX="619.0" layoutY="14.0" onAction="#handleHomeButton" text="Logout" textFill="WHITE">
+			<font>
+				<Font name="System Bold" size="15.0" />
+			</font>
+		</Hyperlink>
+
+	</children>
+</AnchorPane>

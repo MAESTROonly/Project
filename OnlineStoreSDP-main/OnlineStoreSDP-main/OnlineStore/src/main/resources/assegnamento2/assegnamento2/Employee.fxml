@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="393.0" prefWidth="694.0" style="-fx-background-color: #ff8c00;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assegnamento2.assegnamento2.controller.EmployeeController">
+	<children>
+
+		<Label layoutX="14.0" layoutY="9.0" prefHeight="62.0" prefWidth="166.0" text="Dashboard" textFill="WHITE">
+			<font>
+				<Font name="Couture-Bold" size="32.0" />
+			</font>
+		</Label>
+
+		<Label fx:id="usernameLabel" layoutX="172.0" layoutY="16.0" prefHeight="47.0" prefWidth="146.0" text="Employee">
+			<font>
+				<Font size="32.0" />
+			</font>
+		</Label>
+
+		<TabPane fx:id="employeeTabPane" layoutY="81.0" prefHeight="350.0" prefWidth="693.0" style="-fx-background-color: white;" tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+
+				<Tab fx:id="deliveryTabE" text="Confirm order">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+							<children>
+
+								<TableView fx:id="deliveryTableView" layoutX="170.0" layoutY="10.0" prefHeight="247.0" prefWidth="510.0">
+									<placeholder>
+										<Label text="NO ORDER" />
+									</placeholder>
+									<columns>
+										<TableColumn fx:id="ordElettronicE" prefWidth="127.20002746582031" text="Name">
+											<cellValueFactory>
+												<PropertyValueFactory property="name" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="ordEProducerE" minWidth="0.0" prefWidth="115.2000732421875" text="Producer">
+											<cellValueFactory>
+												<PropertyValueFactory property="producer" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="ordEidE" prefWidth="42.4000244140625" text="ID">
+											<cellValueFactory>
+												<PropertyValueFactory property="id" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="ordEAmountE" prefWidth="79.20001220703125" text="Amount">
+											<cellValueFactory>
+												<PropertyValueFactory property="amount" />
+											</cellValueFactory>
+										</TableColumn>
+                                        <TableColumn fx:id="ordEPriceE" prefWidth="142.39999999999998" text="Price">
+											<cellValueFactory>
+												<PropertyValueFactory property="price" />
+											</cellValueFactory>
+										</TableColumn>
+									</columns>
+								</TableView>
+
+								<Button fx:id="deliverySendAllE" layoutX="541.0" layoutY="269.0" mnemonicParsing="false" onAction="#handleSendAll" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #ffd700;" text="Send All" textFill="WHITE">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Button>
+								<ComboBox fx:id="choiceClient" layoutX="14.0" layoutY="10.0" onAction="#handleChoiceClient" prefWidth="150.0" promptText="choice client" visibleRowCount="9" />
+
+							</children>
+
+						</AnchorPane>
+					</content>
+				</Tab>
+
+				<Tab fx:id="buyFinishedTabE" closable="false" onSelectionChanged="#handleViewBuyElDev" text="Buy finished product">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="680.0">
+							<children>
+
+								<TableView fx:id="buyFinishedTableView" layoutX="14.0" layoutY="10.0" prefHeight="263.0" prefWidth="670.0">
+
+									<columns>
+										<TableColumn fx:id="bName" prefWidth="100.0" text="Name">
+											<cellValueFactory>
+												<PropertyValueFactory property="name" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="bProducer" prefWidth="100.0" text="Producer">
+											<cellValueFactory>
+												<PropertyValueFactory property="producer" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="bID" prefWidth="100.0" text="ID">
+											<cellValueFactory>
+												<PropertyValueFactory property="id" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="bAmount" text="Amount">
+											<cellValueFactory>
+												<PropertyValueFactory property="amount" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="bPrice" prefWidth="100.0" text="Price">
+											<cellValueFactory>
+												<PropertyValueFactory property="price" />
+											</cellValueFactory>
+										</TableColumn>
+									</columns>
+
+								</TableView>
+
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+
+				<Tab fx:id="updateTab" closable="false" text="Update">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="680.0">
+							<children>
+
+								<TableView fx:id="updateTableView" layoutX="14.0" layoutY="10.0" prefHeight="266.0" prefWidth="502.0">
+									<columns>
+										<TableColumn fx:id="uName" prefWidth="100.0" text="Name">
+											<cellValueFactory>
+												<PropertyValueFactory property="name" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="uProducer" prefWidth="100.0" text="Producer">
+											<cellValueFactory>
+												<PropertyValueFactory property="producer" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="uID" prefWidth="100.0" text="ID">
+											<cellValueFactory>
+												<PropertyValueFactory property="id" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="uAmount" text="Amount">
+											<cellValueFactory>
+												<PropertyValueFactory property="amount" />
+											</cellValueFactory>
+										</TableColumn>
+										<TableColumn fx:id="uPrice" prefWidth="100.0" text="Price">
+											<cellValueFactory>
+												<PropertyValueFactory property="price" />
+											</cellValueFactory>
+										</TableColumn>
+									</columns>
+								</TableView>
+
+								<Button fx:id="uploadButtonE" layoutX="556.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="28.0" prefWidth="99.0" style="-fx-background-color: #ffd700;" text="Update" textFill="WHITE">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Button>
+                        <TextField fx:id="IDproductE" layoutX="531.0" layoutY="93.0" promptText="ID product" />
+                        <TextField fx:id="amountE" layoutX="531.0" layoutY="139.0" promptText="Amount" />
+
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+
+			</tabs>
+		</TabPane>
+
+		<Hyperlink layoutX="619.0" layoutY="14.0" onAction="#handleHomeButton" text="Logout" textFill="WHITE">
+			<font>
+				<Font name="System Bold" size="15.0" />
+			</font>
+		</Hyperlink>
+
+	</children>
+</AnchorPane>

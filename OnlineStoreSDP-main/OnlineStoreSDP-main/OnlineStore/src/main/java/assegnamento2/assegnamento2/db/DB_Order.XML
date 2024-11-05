@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<database>
+    <order id="Aitkazy">
+        <elDev>
+            <name>Iphone 13 Pro</name>
+            <id>11</id>
+            <producer>Apple</producer>
+            <price>999.0</price>
+            <amount>2</amount>
+        </elDev>
+    </order>
+</database>
